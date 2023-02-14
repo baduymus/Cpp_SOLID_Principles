@@ -1,6 +1,7 @@
 #include <iostream>
 
-class cShape{
+//
+class cShape{ //base
 public:
     int ShapeArea;
     virtual double calculateArea() = 0;
@@ -19,21 +20,19 @@ public:
 class cCircle : public cShape {
 private:
     double radius;
-
 public:
-    cCircle(double r) : radius(r) {}
+    cCircle(double r) : radius(r) {} // constructer : constructer'ın bodysine girmeden önce  {} = boş anlamına geliyor.
     double calculateArea() {
         return 3.14159265 * radius * radius;
     }
 };
-
 
 int main(){
 
     cSquare Square1(5);
     cCircle Circle1(3);
 
-    cShape* shapes[2];
+    cShape* shapes[2]; //Array demek pointer demek.
     shapes[0] = &Square1;
     shapes[1] = &Circle1;
 
